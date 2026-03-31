@@ -1,0 +1,173 @@
+:root {
+    --bg-color: #fdfbfb;
+    --text-color: #444;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* 画面外へのスクロールを防ぐ */
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 50px 70px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+    max-width: 90vw;
+    z-index: 10;
+}
+
+.game-title {
+    font-size: 1.2rem;
+    color: #ff758c;
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.secret-no {
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.secret-no.active {
+    cursor: pointer;
+    text-shadow: 0 0 12px rgba(255,117,140,0.8);
+    position: relative;
+    z-index: 1000;
+}
+
+.secret-no.active:hover {
+    color: #ff4757;
+    transform: scale(1.2);
+}
+
+.explanation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.character-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    border: 3px solid #ff758c;
+}
+
+.speech-bubble {
+    position: relative;
+    padding: 15px 25px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+    max-width: 400px;
+}
+
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    transform: translateY(-50%);
+    border-width: 12px 12px 12px 0;
+    border-style: solid;
+    border-color: transparent rgba(255,255,255,0.95) transparent transparent;
+}
+
+.btn.restart {
+    background: linear-gradient(135deg, #6dd5ed 0%, #2193b0 100%);
+    margin-top: 25px;
+    font-size: 1.1rem;
+    padding: 12px 35px;
+}
+
+.btn.restart:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(33, 147, 176, 0.4);
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 40px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    min-height: 80px; /* 余白確保 */
+}
+
+.btn {
+    border: none;
+    padding: 15px 45px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    color: white;
+    transition: all 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+}
+
+.btn.yes {
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+}
+
+.btn.yes:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 117, 140, 0.4);
+}
+
+.btn.no {
+    background: linear-gradient(135deg, #a8caba 0%, #5d4157 100%);
+}
+
+.btn.no:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(93, 65, 87, 0.4);
+}
+
+/* 非表示用クラス */
+.hidden {
+    display: none !important;
+}
+
+#message-container h2 {
+    color: #ff758c;
+    font-size: 2.5rem;
+    animation: fadeIn 1s ease-in-out;
+    line-height: 1.5;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

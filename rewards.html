@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特典コンテンツ選択 - Yes/No Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', 'Hiragino Kaku Gothic ProN', sans-serif;
+            background: linear-gradient(135deg, #1f1c2c 0%, #928dab 100%);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 50px 60px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            max-width: 600px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            color: #ffb88c;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #eee;
+        }
+
+        .rewards-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .reward-btn {
+            display: block;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            font-size: 1.3rem;
+            border-radius: 15px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reward-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            transition: all 0.5s ease;
+        }
+
+        .reward-btn:hover::before {
+            left: 200%;
+        }
+
+        .reward-btn:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #ff758c;
+            box-shadow: 0 6px 20px rgba(255, 117, 140, 0.3);
+        }
+
+        .reward-btn.secret {
+            border-color: #a8caba;
+            color: #a8caba;
+        }
+
+        .reward-btn.secret:hover {
+            border-color: #6dd5ed;
+            color: #fff;
+            box-shadow: 0 6px 20px rgba(109, 213, 237, 0.3);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 35px;
+            color: #bbb;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>特典コンテンツ</h1>
+        <p>今の気分に合わせて、お好きなものを選んでくださいね。</p>
+        <div class="rewards-list">
+            <!-- リンク先(href)は実際のコンテンツのURLやファイル名に書き換えてください -->
+            <a href="present2.mp4" class="reward-btn" target="_blank">元気が欲しい時に</a>
+            <a href="present1.pdf" class="reward-btn" target="_blank">【極秘】えのき文書が流出</a>
+            <a href="present3.jpg" class="reward-btn secret" target="_blank">？？？</a>
+        </div>
+        <a href="bonus.html" class="back-link">← 前のページに戻る</a>
+    </div>
+</body>
+
+</html>
